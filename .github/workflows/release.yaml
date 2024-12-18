@@ -86,7 +86,6 @@ jobs:
           curl -LO "https://github.com/cross-rs/cross/releases/download/v0.2.5/cross-x86_64-unknown-linux-musl.tar.gz"
           tar xf cross-x86_64-unknown-linux-musl.tar.gz
           echo "CARGO=cross" >> $GITHUB_ENV
-          echo "RUSTFLAGS=--cfg ${{ env.PROJECT }}" >> $GITHUB_ENV
           echo "TARGET_DIR=./target/${{ matrix.target }}" >> $GITHUB_ENV
 
       - name: Build
