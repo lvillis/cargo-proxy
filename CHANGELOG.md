@@ -2,11 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.4] - 2024-12-18
+
+### 🚀 Features
+
+- Add action.yaml
+
+### ⚙️ Miscellaneous Tasks
+
+- Update action.yaml
+
 ## [0.1.3] - 2024-12-18
 
 ### 🐛 Bug Fixes
 
 - *(ci)* Release
+
+### ⚙️ Miscellaneous Tasks
+
+- Release cargo-proxy version 0.1.3
 
 ## [0.1.2] - 2024-12-18
 
