@@ -1,0 +1,31 @@
+[package]
+name = "cargo-proxy"
+version = "0.1.0"
+edition = "2021"
+description = "🛠️ Quickly set, view, and clear Cargo proxies to speed up dependency downloads."
+license = "MIT"
+authors = ["lvillis<lvillis@outlook.com>"]
+repository = "https://github.com/lvillis/cargo-proxy"
+homepage = "https://github.com/lvillis/cargo-proxy"
+documentation = "https://github.com/lvillis/cargo-proxy/blob/main/README.md"
+exclude = [
+    "/docs/",
+    "/tests/",
+    "/.config/",
+    "/.github/",
+    "/.justfile",
+    "/rust-toolchain.toml",
+    "/.gitignore",
+]
+
+[dependencies]
+clap = { version = "4.5.23", features = ["derive"] }
+dirs = { version = "5.0.1", default-features = false }
+toml_edit = { version = "0.22.22", default-features = false, features = ["display", "parse"] }
+
+[package.metadata.release]
+tag-prefix = ""
+tag-name = "{{prefix}}{{version}}"
+pre-release-commit-message = "chore: release {{crate_name}} version {{version}}"
+tag-message = "chore: release {{crate_name}} version {{version}}"
+pre-release-hook = ["git", "cliff", "-o", "CHANGELOG.md", "--tag", "{{version}}" ]
