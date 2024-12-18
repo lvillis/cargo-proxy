@@ -21,9 +21,7 @@ runs:
   using: "composite"
   steps:
     - name: Set up Rust
-      uses: actions/setup-rust@v1
-      with:
-        rust-version: "stable"
+      uses: dtolnay/rust-toolchain@stable
 
     - name: Build cargo-proxy
       run: cargo install --path .
