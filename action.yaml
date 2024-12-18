@@ -1,6 +1,9 @@
 name: "Cargo Proxy"
 description: "🛠️ Quickly set, view, and clear Cargo proxies to speed up dependency downloads."
 author: "lvillis"
+branding:
+  icon: "box"
+  color: "yellow"
 inputs:
   proxy:
     description: "Proxy name or custom URL. Leave empty if you only want to show or clear."
