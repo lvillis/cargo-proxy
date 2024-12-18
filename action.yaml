@@ -1,0 +1,38 @@
+name: "Cargo Proxy Action"
+description: "🛠️ Quickly set, view, and clear Cargo proxies to speed up dependency downloads."
+author: "lvillis"
+inputs:
+  proxy:
+    description: "Proxy name or custom URL. Leave empty if you only want to show or clear."
+    required: false
+    default: ""
+  clear:
+    description: "If true, clear the current proxy configuration."
+    required: false
+    default: "false"
+  show:
+    description: "If true, show the current proxy configuration."
+    required: false
+    default: "false"
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Rust
+      uses: actions/setup-rust@v1
+      with:
+        rust-version: "stable"
+
+    - name: Build cargo-proxy
+      run: cargo install --path .
+
+    - name: Run cargo-proxy
+      if: ${{ inputs.clear == 'true' }}
+      run: cargo proxy clear
+
+    - name: Run cargo-proxy
+      if: ${{ inputs.show == 'true' }}
+      run: cargo proxy show
+
+    - name: Run cargo-proxy
+      if: ${{ inputs.proxy != '' && inputs.clear != 'true' && inputs.show != 'true' }}
+      run: cargo proxy set ${{ inputs.proxy }}
