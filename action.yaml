@@ -1,4 +1,4 @@
-name: "Cargo Proxy Action"
+name: "Cargo Proxy"
 description: "🛠️ Quickly set, view, and clear Cargo proxies to speed up dependency downloads."
 author: "lvillis"
 inputs:
