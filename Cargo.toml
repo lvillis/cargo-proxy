@@ -21,7 +21,7 @@ exclude = [
 [dependencies]
 clap = { version = "4.5.23", features = ["derive"] }
 dirs = { version = "6.0.0", default-features = false }
-toml_edit = { version = "0.22.22", default-features = false, features = ["display", "parse"] }
+toml_edit = { version = "0.23.7", default-features = false, features = ["display", "parse"] }
 
 [package.metadata.release]
 tag-prefix = ""
